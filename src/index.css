@@ -1,0 +1,223 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-y: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* header style */
+
+.layout > header {
+  background-color: #3c8dbc;
+  height: 50px;
+  display: flex;
+  align-items: center;  
+  color: #fff;
+  font-size: 20px;
+  padding: 0 15px;
+}
+
+.layout > header > .fa-bars{
+  float: left;
+  cursor: pointer;
+}
+
+.layout > header > .header-content {
+  text-align: center;
+  width: 100%; 
+}
+
+.layout > header > .header-btn {
+  float: right;
+  padding: 0 15px;
+  height: 30px;
+  font-weight: 600;
+  position: absolute;
+  right: 15px;
+}
+
+/* end header style */
+
+/* aside element styles */
+
+.layout > .main-sidebar { 
+  position: absolute;
+  width: 250px;
+  height: 100vh;
+  box-shadow: 1px 0px #e5e2e2;
+  transition: transform 600ms ease;
+}
+
+.layout > .main-sidebar.content-open{
+  transform: translate(0%);
+}
+
+.layout > .main-sidebar .row-item {
+  display: block;
+  width: 150px;
+  background-color: #fff;
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin: 10px auto;
+  padding: 10px;
+  cursor: move;
+}
+
+.layout > .main-sidebar .row { 
+  align-items: center;
+  padding: 30px;
+  border-color: #d2d2d2;
+}
+
+.layout > .main-sidebar .row-item span.fa {
+  margin: 0px 15px;
+}
+
+/* end aside element styles */
+
+/* primary content area styles */
+
+.layout > .drop-container {
+  transition: margin .5s ease, transform .5s ease;
+  padding: 10px 15px;
+}
+
+.layout > .drop-container .note-content {
+  float: right;
+  padding: 0px 20px;
+}
+
+.layout > .drop-container .note-content .fa-trash:before {
+  margin-right: 5px;
+}
+
+.layout > .drop-container .dropArea {
+  border: 1px dashed grey;
+  clear: both;
+  height: calc(100vh - 87px);
+}
+
+.layout > .drop-container.content-open{
+  margin-left: 250px;
+}
+
+.layout > .drop-container .dropArea > .drop-container, .layout > .drop-container .dropArea .drop-overlay {
+  height: 100%;
+  width: 100%;
+}
+
+.layout > .drop-container .dropArea .drop-overlay{
+  background-color: #f3f3f3;
+  color: #000;  
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none !important;
+  height: 100%;
+  width: 100%;
+  opacity: 0.5; 
+  align-items: center; 
+  justify-content: center;
+}
+
+.layout > .drop-container .dropArea .backdrop.drop-overlay {
+  display: flex;
+}
+
+.layout > .drop-container .dropArea .component {
+  position: absolute;
+  z-index: 2;
+  cursor: move;
+
+}
+
+.layout > .drop-container .dropArea .component input{
+  height: 31px;
+  padding: 0px;
+  text-indent: 5px;
+}
+
+.layout > .drop-container h1 {
+  margin: 0;
+}
+
+/* end primary content area styles */
+
+/* popup style */
+
+.layout .popup{
+  width: 150px;
+  height: 64px;
+  position: absolute;
+  border: 1px solid grey;
+  border-radius: 10px;
+}
+
+/* .layout .popup:after{
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent #FFFFFF transparent transparent;
+  top: 11px;
+  left: -24px;
+} */
+
+.layout .popup > span {
+  text-align: center;
+  display: block;
+  margin: 5px;
+}
+
+.layout .popup hr{
+  margin: 2px 0;
+}
+
+.layout .popup .cancel, .layout .popup .apply {
+  height: 25px;
+  width: 30px;
+  border-radius: 5px;
+  float: right;
+  right: 5px;
+  margin: 0 3px;
+}
+
+.layout .popup .arrow {
+  border: solid grey;
+  border-width: 0 1px 1px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  position: absolute;
+  bottom: -5px;
+  left: 46%;
+  background: #fff;  
+}
+
+.layout .toast {
+  position: absolute;
+  top: 62px;
+  right: 17px;
+  height: 30px;
+  width: 200px;
+  background-color: #f0ae4d;
+  color: #fff;
+  text-align: center;
+  justify-content: center;
+  line-height:30px;
+}
+
+.layout .toast.show{
+  display: flex !important;
+}
